@@ -1,0 +1,48 @@
+<mvc:View 
+    controllerName="project1.controller.View1"
+    xmlns:mvc="sap.ui.core.mvc" 
+    xmlns="sap.m" 
+    xmlns:form="sap.ui.layout.form"
+    xmlns:core="sap.ui.core"
+    xmlns:u="sap.ui.unified" >
+
+    <Page title="Customer List">
+        <content>
+            <SearchField liveChange="onTestSearch"/>
+            <Table
+                id="customerTab"
+                items="{modCustomer>/}">
+                <columns>
+                    <Column>
+                        <Text text="{i18n>columnCustomerID}"/>
+                    </Column>
+                    <Column>
+                        <Text text="Company Name"/>
+                    </Column>
+                    <Column>
+                        <Text text="City"/>
+                    </Column>
+                    <Column>
+                        <Text text="Fax"/>
+                    </Column>
+                </columns>
+                <items>
+                    <ColumnListItem
+                        type="Navigation"
+                        press="onNavigazione">
+                        <cells>
+                            <Text text="{modCustomer>CustomerID}"/>
+                            <Text text="{modCustomer>CompanyName}"/>
+                            <Text text="{modCustomer>City}"/>
+                            <Text text="{modCustomer>Fax}"/>
+                        </cells>
+                    </ColumnListItem>
+                </items>
+            </Table>
+        </content>
+        <footer>
+            <OverflowToolbar>
+            </OverflowToolbar>
+        </footer>
+    </Page>
+</mvc:View>
